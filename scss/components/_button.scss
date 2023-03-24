@@ -1,0 +1,180 @@
+.btn{
+    display: flex;
+    gap: 10px;
+}
+
+.btn-add {
+    padding: 5px 15px;
+    border: none;
+    color: white;
+    font-family: fantasy;
+    background-color: $button-color;
+    font-size: 1.4rem;
+    outline: none;
+    transition:.25s all ease;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $button-hover;
+    }
+}
+
+.btn-filter {
+    padding: 5px 12px;
+    border: none;
+    color: white;
+    font-family: fantasy;
+    background-color: $button-color;
+    font-size: 1.4rem;
+    outline: none;
+    transition:.25s all ease;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $button-hover;
+    }
+}
+
+//DROP DEL FILTRO 
+.filter {
+    position: relative;
+}
+
+.btn-filter {
+    display: block;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.filter-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    display: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.filter-options li {
+    display: block;
+}
+
+.filter-options a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.filter-options a:hover {
+    background-color: #eee;
+}
+
+.show{
+    display: block;
+}
+
+
+.btn-delete {
+    margin-left: auto;
+    border: none;
+    background-color: #e31746;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    outline: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 10%;
+    font-size: 1.2em; 
+    transition:.25s all ease;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #e397fa; 
+    }
+}
+
+.btn-done{
+    margin-left: auto;
+    border: none;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    padding: 5px 8px;
+    outline: none;
+    width: 10%;
+    font-size: 1.2em; 
+    transition:.25s all ease;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #e397fa; 
+    }
+}
+
+.done-icon{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.filter{
+    font-size: 1.3rem;
+}
+
+
+//DROPDWOUN BUTTON
+select {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+    outline:0;
+    box-shadow:none;
+    border:0!important;
+    background: white;
+    background-image: none;
+    flex: 1;
+    padding: 0 .5em;
+    color: $background-color;
+    cursor:pointer;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+
+    &::-ms-expand {
+        display: none;
+    }
+}
+.select {
+    position: relative;
+    display: flex;
+    width: 400px;
+    height: 3em;
+    line-height: 3;
+    background: #5c6664;
+    overflow: hidden;
+    border-radius: .25em;
+
+    &::after {
+        content: '\25BC';
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 1em;
+        background: #2b2e2e;
+        cursor:pointer;
+        pointer-events:none;
+        transition:.25s all ease;
+    }
+}
+.select:hover::after {
+    color: $button-hover;
+}
+

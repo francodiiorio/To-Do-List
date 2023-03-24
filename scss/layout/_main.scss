@@ -1,0 +1,129 @@
+main{
+    display: flex;
+}
+
+
+h1 {
+    text-align: center;
+    color: $button-color;
+    margin-bottom: 10px;
+}
+
+.container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $color-principal;
+    padding: 10px 30px 30px 30px;
+    &__general{
+        animation: slide-right 2s;
+    }
+    
+
+}
+
+
+
+.form {
+    &__container{
+        margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    }
+    &__tarea{
+        display: flex;
+        margin-bottom: 20px;
+    }
+    
+}
+
+input {
+    padding: 15px 10px;
+    outline: none;
+    width: 400px;
+    border: none;
+}
+
+
+.empty {
+    margin-top: 20px;
+    color: $button-color;
+}
+
+
+//DOM
+.li-container {
+    background-color: #865DFF;
+    width: 100%;
+    color: #191825;
+    margin-top: 20px; }
+
+ul {
+    padding: 0; 
+}
+
+li {
+    list-style: none;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 15px;
+    display: flex; 
+}
+
+li p {
+    margin: 0;
+    padding: 15px;
+    width: 100%; 
+}
+
+
+//DROPDOWN MENU
+select {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+    outline:0;
+    box-shadow:none;
+    border:0!important;
+    background: white;
+    background-image: none;
+    flex: 1;
+    padding: 0 .5em;
+    color: $background-color;
+    cursor:pointer;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+
+    &::-ms-expand {
+        display: none;
+    }
+}
+.select {
+    position: relative;
+    display: flex;
+    width: 400px;
+    height: 3em;
+    line-height: 3;
+    background: #5c6664;
+    overflow: hidden;
+    border-radius: .25em;
+
+    &::after {
+        content: '\25BC';
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 1em;
+        background: #2b2e2e;
+        cursor:pointer;
+        pointer-events:none;
+        transition:.25s all ease;
+    }
+}
+.select:hover::after {
+    color: $button-hover;
+}
