@@ -35,6 +35,35 @@
     }
 }
 
+.filtro-container {
+    position: relative;
+    display: inline-block;
+    
+}
+#filtro-opciones {
+    background-color: #f1f1f1;
+    list-style: none;
+    margin-left: 10px;
+    padding: 0;
+    position: absolute;
+    top: -50%;
+    left: 100%;
+    width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    transition: .25 all ease;
+}
+.filtro__li{
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: #333333;
+
+    &:hover{
+        background-color: #ddd;
+    }
+}
+
 //DROP DEL FILTRO 
 .filter {
     position: relative;

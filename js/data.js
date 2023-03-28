@@ -21,7 +21,6 @@ class Tarea {
 }
 
 
-const tareas = new Array;
+let tareas = new Array;
+//Array que va a ser utilizado en la entrega final
 const tareasFinalizadas = new Array;
-
-const studyTask = new Array;

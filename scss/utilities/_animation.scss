@@ -20,12 +20,13 @@
     }
 }
 
+
+
 .show{
     display: block;
+    animation: slide-top 1s;
 }
 .hidden{
-    display: none;
+    visibility: hidden;
+    animation: slide-top 1s;
 }
-
-
-// Tengo pensado agragar animaciones para la siguiente preentrega 

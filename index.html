@@ -11,7 +11,7 @@
 </head>
 <body>
     <main>
-        <div class="container container__general">
+        <div class="container">
             <h1>To Do List</h1>
             <div class="form__container">
                 <form>
@@ -19,9 +19,17 @@
                         <input type="text" placeholder="Agregar tarea...">
                         <div class="btn">
                             <button class="btn-add">+</button>
-                            <button class="btn-filter">
-                                <span class="material-symbols-outlined filter">filter_alt</span>
-                            </button>
+                            <div class="filtro-container">
+                                <button class="btn-filter">
+                                    <span class="material-symbols-outlined filter">filter_alt</span>
+                                </button>
+                                <ul id="filtro-opciones" class="hidden">
+                                    <li id="filterAll" class="filtro__li">Todas</li>
+                                    <li id="filterStudy" class="filtro__li">Estudio</li>
+                                    <li id="filterHome" class="filtro__li">Casa</li>
+                                    <li id="filterWork" class="filtro__li">Trabajo</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="select">
@@ -33,9 +41,10 @@
                         </select>
                     </div>
                 </form>
+                
             </div>
             <div class="li-container">
-                <ul>
+                <ul class="task__container">
                     
                 </ul>
             </div>
@@ -43,9 +52,7 @@
                 <p>No te queda nada por hacer. Agrega tareas!!</p>
             </div>
         </div>
-        <section class="container container__filter hidden">
-            <h2></h2>
-        </section>
+        
     </main>
     
     <script src="./js/data.js"></script>
