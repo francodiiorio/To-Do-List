@@ -7,7 +7,6 @@
     padding: 5px 15px;
     border: none;
     color: white;
-    font-family: fantasy;
     background-color: $button-color;
     font-size: 1.4rem;
     outline: none;
@@ -23,7 +22,6 @@
     padding: 5px 12px;
     border: none;
     color: white;
-    font-family: fantasy;
     background-color: $button-color;
     font-size: 1.4rem;
     outline: none;
@@ -112,41 +110,33 @@
 
 
 .btn-delete {
-    margin-left: auto;
-    border: none;
-    background-color: #e31746;
-    color: white;
-    font-weight: bold;
-    padding: 5px 10px;
-    outline: none;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    width: 10%;
-    font-size: 1.2em; 
-    transition:.25s all ease;
-
     &:hover {
         cursor: pointer;
-        background-color: #e397fa; 
+        color: red;
+        scale: 1.5; 
     }
 }
 
 .btn-done{
-    margin-left: auto;
-    border: none;
-    background-color: green;
-    color: white;
-    font-weight: bold;
-    padding: 5px 8px;
-    outline: none;
-    width: 10%;
-    font-size: 1.2em; 
-    transition:.25s all ease;
+    
 
     &:hover {
         cursor: pointer;
-        background-color: #e397fa; 
+        color: green; 
+        scale: 1.5;
     }
+}
+.btn__task{
+    margin-left: auto;
+    border: none;
+    color: black;
+    font-weight: bold;
+    outline: none;
+    width: 10%;
+    display: flex;
+    align-self: center;
+    font-size: 30px; 
+    transition:.25s all ease;
 }
 
 .done-icon{

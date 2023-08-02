@@ -9,6 +9,7 @@ const empty = document.querySelector(".empty");
 const filterOptions = document.getElementById("filtro-opciones");
 var filterValue = "";
 
+
 const datosDeBusqueda = {
   category : filterValue,
 }
@@ -34,6 +35,7 @@ function loadTask(){
   let load = JSON.parse(localStorage.getItem("tareas")) || [];
   tareas = load;
   showTask();
+  updateChart();
 }
 
 document.addEventListener("click", (e) => {
@@ -77,8 +79,8 @@ if (tareasMostradas.length > 0) {
             ) : (
                 `<span>${item.nombre}</span>`
             )}</p>
-            <button class="btn-done" data-id="${item.id}"><span class='done-icon material-symbols-outlined'>done</span></button>
-            <button class="btn-delete" data-id="${item.id}"><span class="material-symbols-outlined">close</span></button>
+            <span class="material-symbols-outlined btn__task btn-done" data-id="${item.id}">done</span>
+            <span class="material-symbols-outlined btn__task btn-delete" data-id="${item.id}">delete</span>
             `
         ul.appendChild(elemento)
         empty.style.display = "none";
@@ -105,32 +107,34 @@ function addTask(e){
     select.value = "defecto"
     empty.style.display = "none";
 
+    //PRUEBA
+    console.log(tareas)
     localStorage.setItem("tareas", JSON.stringify(tareas))
+    updateChart();
   }
 }
 
-//Por el momomento el marcar la tarea hecha solo la elimina de tareas pendientes. En la entrega final va a haber un contador de tareas finalizadas.1
+//Por el momomento el marcar la tarea hecha solo la elimina de tareas pendientes. En la entrega final va a haber un contador de tareas finalizadas
 function deleteTask(e){
-  if (e.target.classList.contains("btn-delete") || e.target.classList.contains("btn-done")) {
+  if (e.target.classList.contains("btn-delete")) {
     let btnDelete = e.target;
     let btnId =  Number(btnDelete.getAttribute("data-id"))
-    let tareaDelete = buscarTarea(btnId) 
-
-    tareas.splice(tareas.indexOf(tareaDelete), 1)
-
-    localStorage.setItem("tareas", JSON.stringify(tareas))
-    showTask();
+    deleteTaskArray(btnId)
+    updateChart();
   }
-  
+  if (e.target.classList.contains("btn-done")) {
+    let btnDone = e.target;
+    let btnId =  Number(btnDone.getAttribute("data-id"))
+    tareasFinalizadas.push(buscarTarea(btnId))
+    deleteTaskArray(btnId)
+  } 
+  showTask();
 }
 
 function deleteTaskArray(btnId){
   let tareaDelete = buscarTarea(btnId) 
-
   tareas.splice(tareas.indexOf(tareaDelete), 1)
-
   localStorage.setItem("tareas", JSON.stringify(tareas))
-  showTask();
 }
 
 function buscarTarea(id){
@@ -146,4 +150,29 @@ function buscarTarea(id){
     tareaEncontrada = tareas[i];
   }
   return tareaEncontrada;
+}
+
+function updateChart() {
+  const categorias = ["Study", "Home", "Work"];
+  const datosTareas = {
+    Study: 0,
+    Home: 0,
+    Work: 0,
+  };
+
+  tareas.forEach((tarea) => {
+    if (tarea.category == "estudio") {
+      datosTareas.Study++;
+    }
+    if(tarea.category == "casa"){
+      datosTareas.Home++;
+    }
+    if(tarea.category == "trabajo"){
+      datosTareas.Work++;
+    }
+  });
+
+  const data = categorias.map((categoria) => datosTareas[categoria]);
+  myChart.data.datasets[0].data = data;
+  myChart.update();
 }

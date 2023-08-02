@@ -23,4 +23,4 @@ class Tarea {
 
 let tareas = new Array;
 //Array que va a ser utilizado en la entrega final
-const tareasFinalizadas = new Array;
+let tareasFinalizadas = new Array;
