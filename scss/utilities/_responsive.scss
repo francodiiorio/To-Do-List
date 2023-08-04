@@ -11,4 +11,10 @@
         grid-row: 1;
         grid-column: 1;
     }
+    #filtro-opciones {
+        top: -50%;
+        left: -400%;
+        width: 150px;
+        z-index: 100;
+    }
 }
